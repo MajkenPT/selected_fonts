@@ -1,0 +1,17 @@
+/* Hostes sammen med filerne i /fonts. Peg Klaviyo på denne fil eller direkte på woff2-filerne. */
+@font-face {
+  font-family: "Suisse Intl";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SuisseIntl-Regular.woff2") format("woff2"),
+       url("fonts/SuisseIntl-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Suisse Intl Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SuisseIntlMono-Regular.woff2") format("woff2"),
+       url("fonts/SuisseIntlMono-Regular.woff") format("woff");
+}

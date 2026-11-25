@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suisse Intl – font hosting</title>
+<link rel="stylesheet" href="fonts.css">
+<style>
+  body{margin:0;padding:48px max(16px,5vw);font:16px/1.5 "Suisse Intl",Helvetica,Arial,sans-serif;color:#111;background:#fff}
+  main{max-width:760px;margin:0 auto}
+  h1{font-weight:400;font-size:2.5rem;margin:0 0 8px}
+  h2{font-weight:400;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#666;margin:40px 0 8px}
+  .mono{font-family:"Suisse Intl Mono",Menlo,monospace}
+  .sample{font-size:1.6rem;margin:0}
+  code,pre{font-family:"Suisse Intl Mono",Menlo,monospace;font-size:.85rem}
+  pre{background:#f4f4f4;padding:12px;overflow-x:auto;margin:0}
+  ul{padding:0;list-style:none}
+  li{padding:8px 0;border-top:1px solid #ddd;display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+  button{font:inherit;padding:2px 10px;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+  <h1>Suisse Intl</h1>
+  <p>Regular og Mono, hostet til Klaviyo.</p>
+
+  <h2>Regular</h2>
+  <p class="sample">Hamburgefonstiv 0123456789</p>
+  <h2>Mono</h2>
+  <p class="sample mono">Hamburgefonstiv 0123456789</p>
+
+  <h2>URL'er til Klaviyo</h2>
+  <ul id="urls"></ul>
+
+  <h2>CSS</h2>
+  <pre id="css"></pre>
+</main>
+<script>
+  const base = location.href.replace(/[^/]*$/, "");
+  const files = ["fonts/SuisseIntl-Regular.woff2","fonts/SuisseIntl-Regular.woff","fonts/SuisseIntlMono-Regular.woff2","fonts/SuisseIntlMono-Regular.woff","fonts.css"];
+  const ul = document.getElementById("urls");
+  for (const f of files) {
+    const url = base + f, li = document.createElement("li");
+    const c = document.createElement("code"); c.textContent = url;
+    const b = document.createElement("button"); b.textContent = "Kopiér";
+    b.onclick = () => navigator.clipboard.writeText(url).then(() => b.textContent = "Kopieret", () => {});
+    li.append(c, b); ul.append(li);
+  }
+  document.getElementById("css").textContent =
+    `font-family: "Suisse Intl", Helvetica, Arial, sans-serif;\nfont-family: "Suisse Intl Mono", Menlo, "Courier New", monospace;`;
+</script>
+</body>
+</html>

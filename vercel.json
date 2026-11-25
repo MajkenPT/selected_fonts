@@ -1,0 +1,3 @@
+{ "headers": [
+  { "source": "/(fonts/.*|fonts.css)", "headers": [
+    { "key": "Access-Control-Allow-Origin", "value": "*" } ] } ] }
